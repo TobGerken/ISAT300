@@ -1,0 +1,7 @@
+# 
+sudo pip3 install --upgrade setuptools
+#
+sudo apt-get install pyton3-pip
+
+# to download blinka
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
