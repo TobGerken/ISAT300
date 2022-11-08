@@ -18,7 +18,7 @@ import http.client, urllib
 import requests
 import time
 import datetime
-from time import sleep, strftime, time
+from time import sleep, strftime #, time (this overwrites the time module, removed)
 
 # Packages needed for thermocouple setup
 #>>> In this space add the packages that are needed for the thermocouple
