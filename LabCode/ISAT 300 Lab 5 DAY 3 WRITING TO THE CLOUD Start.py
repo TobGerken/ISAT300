@@ -98,7 +98,7 @@ sheet = service.spreadsheets()
 # 3. Identify which lines of code set the values that are written to file
 # 4. Identify which lines of code write the set values to file. 
 # 5. Modify the loop by adding ortions of your thermocouple code such that in each iteration of the loop
-#   a. the uncoupled thermocouple is read out
+#   a. the (uncalibrated) thermocouple temperature is read and saved to a variable
 #   b. uncalibrated and calibrated thermocouple temperatures are printed to the screen
 #   c. uncalibrated and calibrated thermocouple temperatures are written to a csv file
 #   d. calibrated theremocouple temperatures are written to the cloud
