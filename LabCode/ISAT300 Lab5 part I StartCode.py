@@ -30,6 +30,6 @@ cs.direction = digitalio.Direction.OUTPUT
 #**    reading the thermocouple and printing output on screen      *
 #*******************************************************************
 
-# << Complete the missing code below (2 lines)
+# << Complete the missing code below (3 lines)
 
 # >> Complete the missing code above
