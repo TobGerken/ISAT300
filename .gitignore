@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+.quarto
+*_cache/
+/.quarto/
+/_site/
+
+.DS_Store
+.ipynb_checkpoints/
+
