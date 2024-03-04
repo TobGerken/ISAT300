@@ -37,7 +37,7 @@ print(temperature, "C")
 with open("thermometer.csv","a") as logfile:
     logfile.write("\n" + "Celsius, Fahrenheit")
 
-with x in range(30):
+for x in range(30):
     with open("thermometer.csv","a") as logfile:
         logfile.write("\n{0},{1}".format(str(temperature_C), str(temperature_F)))
 
