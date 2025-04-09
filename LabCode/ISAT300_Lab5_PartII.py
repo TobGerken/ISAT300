@@ -21,15 +21,36 @@ spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
 cs = digitalio.DigitalInOut(board.D5)
 cs.direction = digitalio.Direction.OUTPUT
 
-# create a thermocouple object with the above
-# << Complete the missing code below (1 line)
 
-# >> Complete the missing code above
+# create a thermocouple object with the above
+thermocouple = adafruit_max31856.MAX31856(spi, cs)
 
 #*******************************************************************
 #**    reading the thermocouple and printing output on screen      *
 #*******************************************************************
 
-# << Complete the missing code below (3 lines)
+temperature = thermocouple.temperature
 
-# >> Complete the missing code above
+print(temperature, "C")
+
+
+with open("thermometer.csv","a") as logfile:
+    logfile.write("\n" + "Celsius, Fahrenheit")
+
+for x in range(30):
+    with open("thermometer.csv","a") as logfile:
+        logfile.write("\n{0},{1}".format(str(temperature_C), str(temperature_F)))
+
+#*******************************************************************
+#**    turning on the LED if it is too hot or too cold      *
+#*******************************************************************
+        
+    if temperature_C > 25.00 :
+        print ("Warning!")
+        GPIO.output(GPIO_LED, GPIO.HIGH)
+    elif temperature_C <15.00 :
+        print ("Warning!")
+    else:
+        GPIO.output(GPIO_LED, GPIO.LOW)
+                  
+                  

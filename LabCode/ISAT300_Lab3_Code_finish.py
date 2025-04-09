@@ -21,15 +21,34 @@ spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
 cs = digitalio.DigitalInOut(board.D5)
 cs.direction = digitalio.Direction.OUTPUT
 
-# create a thermocouple object with the above
-# << Complete the missing code below (1 line)
 
-# >> Complete the missing code above
+# create a thermocouple object with the above
+thermocouple = adafruit_max31856.MAX31856(spi, cs)
 
 #*******************************************************************
 #**    reading the thermocouple and printing output on screen      *
 #*******************************************************************
 
-# << Complete the missing code below (3 lines)
+temperature = thermocouple.temperature
 
-# >> Complete the missing code above
+#print(temperature, "C")
+
+import datetime
+
+times = []
+temperatures = []
+
+for i in range(100):
+    times.append(datetime.datetime.now())
+    temperatures.append(thermocouple.temperature)
+    
+f = open("temperature_measurements.csv", "a")
+f.write("Time,Temperature \n")
+for i in range(100):
+    f.write("{0},{1}\n".format(times[i], temperatures[i]))
+f.close()
+    
+    
+
+
+    
